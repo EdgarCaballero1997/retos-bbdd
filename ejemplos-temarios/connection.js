@@ -10,10 +10,10 @@
 //         });
 //         console.log('Conexión establecida');
     
-//         let sql = 'CREATE TABLE direction (id_direction INT AUTO_INCREMENT PRIMARY KEY, ' +
-//                                           'calle VARCHAR(200), ' +
-//                                           'numero INT, ' + 
-//                                           'ciudad VARCHAR(60))';
+        // let sql = 'CREATE TABLE direction (id_direction INT AUTO_INCREMENT PRIMARY KEY, ' +
+        //                                   'calle VARCHAR(200), ' +
+        //                                   'numero INT, ' + 
+        //                                   'ciudad VARCHAR(60))';
 
 //         let sql = 'DROP TABLE direction';
 
