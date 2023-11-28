@@ -54,7 +54,7 @@ const mysql = require('mysql2/promise');
             // console.log('Nueva tabla creada!');
             // console.log(result5);
 
-            // let sql1 = 'CREATE TABLE marks (mark_id INT AUTO_INCREMENT PRIMARY KEY, ' +
+            // let sql1 = 'CREATE TABLE Marks (mark_id INT AUTO_INCREMENT PRIMARY KEY, ' +
             //                                'student_id INT, ' +
             //                                'subject_id INT, ' +
             //                                'date DATE, ' +
@@ -98,48 +98,54 @@ const mysql = require('mysql2/promise');
             // console.log('Puntuació insertada!');
             // console.log(resultInsert4);
 
-            // let sqlInsert5 = 'INSERT INTO Grupos (name)' +
-            //                  'VALUES ("TikTokCode")';
+            // let sqlInsert5 = 'INSERT INTO Marks (date, mark)' +
+            //                  'VALUES ("2018-01-01", 2)';
             // let [resultInsert5] = await connection.query(sqlInsert5);
             // console.log('Puntuació insertada');
             // console.log(resultInsert5);
 
-            // -----PARA BORRAR UNA COLUMNA. A TRAVÉS DE WORKBENCH HAS DE HACER CLICK DERECHO > DELETE SELECTED-----
-            // let sqlInsert5 = 'ALTER TABLE Direction DROP COLUMN columna';
-            // let [resultInsert5] = await connection.query(sqlInsert5);
+            // // -----PARA BORRAR UNA COLUMNA. A TRAVÉS DE WORKBENCH HAS DE HACER CLICK DERECHO > DELETE SELECTED-----
+            // let sqlInsert1 = 'ALTER TABLE Direction DROP COLUMN columna';
+            // let [resultInsert1] = await connection.query(sqlInsert1);
             // console.log('Puntuació insertada');
-            // console.log(resultInsert5);
+            // console.log(resultInsert1);
 
-            // ------BORRA LA TABLA 'Direction'-------
-            // let sqlInsert5 = 'DROP TABLE Direction';
-            // let [resultInsert5] = await connection.query(sqlInsert5);
+            // // ------BORRA LA TABLA 'Direction'-------
+            // let sqlInsert2 = 'DROP TABLE Direction';
+            // let [resultInsert2] = await connection.query(sqlInsert2);
             // console.log('Puntuació insertada');
-            // console.log(resultInsert5);
+            // console.log(resultInsert2);
 
-            // ------MODIFICA LA NOTA DE LOS ESTUDIANTES--------
-            // let sqlInsert5 = 'UPDATE Marks SET mark = 0';
-            // let [resultInsert5] = await connection.query(sqlInsert5);
+            // // ------MODIFICA LA NOTA DE LOS ESTUDIANTES--------
+            // let sqlInsert3 = 'UPDATE Marks SET mark = 0';
+            // let [resultInsert3] = await connection.query(sqlInsert3);
             // console.log('Puntuació insertada');
-            // console.log(resultInsert5);
+            // console.log(resultInsert3);
 
-            // ------NOS MUESTRA EL NOMBRE Y EL APELLIDO DE LOS ESTUDIANTES------
-            // let sqlInsert5 = 'SELECT first_name, last_name FROM Students';
-            // let [resultInsert5] = await connection.query(sqlInsert5);
+            // // ------NOS MUESTRA EL NOMBRE Y EL APELLIDO DE LOS ESTUDIANTES------
+            // let sqlInsert4 = 'SELECT first_name, last_name FROM Students';
+            // let [resultInsert4] = await connection.query(sqlInsert4);
             // console.log('Puntuació insertada');
-            // console.log(resultInsert5);
+            // console.log(resultInsert4);
 
-            // ------NOS MUESTRA TODA LA INFORMACIÓN DE LA TABLA------
+            // // ------NOS MUESTRA TODA LA INFORMACIÓN DE LA TABLA------
             // let sqlInsert5 = 'SELECT * FROM Teachers';
             // let [resultInsert5] = await connection.query(sqlInsert5);
             // console.log('Puntuació insertada');
             // console.log(resultInsert5);
 
-            // -----ELIMINA DE LA BASE DE DATOS TODAS LAS NOTAS DE LOS ALUMNOS CUYA FECHA TENGA MÁS DE 10 AÑOS------
-            // -----NO FUNCIONA, ME HA BORRADO TODA LA INFORMACIÓN DE LA TABLA. FARFALLA VENDETTA!------
-            // let sqlDelete = 'DELETE FROM Marks WHERE YEAR(CURDATE()) - YEAR(date) >= 10';
+            // // -----ELIMINA DE LA BASE DE DATOS TODAS LAS NOTAS DE LOS ALUMNOS CUYA FECHA TENGA MÁS DE 10 AÑOS------
+            // // -----NO FUNCIONA, ME HA BORRADO TODA LA INFORMACIÓN DE LA TABLA. FARFALLA VENDETTA!------
+            // let sqlDelete = 'DELETE FROM Marks WHERE date < "2013-01-01"';
             // let [resultDelete] = await connection.query(sqlDelete);
             // console.log('Notas eliminadas');
             // console.log(resultDelete);
+
+            // // ACTUALIZAR LAS NOTAS DE LOS ALUMNOS CUYA NOTA SEA INFERIOR A 5 A UN VALOR DE 5
+            // let sqlUpdateMarks = 'UPDATE Marks SET mark = 5 WHERE mark < 5';
+            // let [resultUpdateMarks] = await connection.query(sqlUpdateMarks);
+            // console.log('Notas actualizadas');
+            // console.log(resultUpdateMarks);
 
         }catch(error){
             console.error(error);
